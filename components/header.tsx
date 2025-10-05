@@ -32,6 +32,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     paddingHorizontal: 16,
+    marginVertical:16,
     backgroundColor: '#060503',
   },
   leftContainer: {
@@ -42,7 +43,7 @@ const styles = StyleSheet.create({
     width: 32,
     height: 32,
     borderRadius: 16,
-    backgroundColor: '#0f0f0f', // предположим белый, как в SVG
+    backgroundColor: '#0f0f0f',
     justifyContent: 'center',
     alignItems: 'center',
     marginRight: 8,
