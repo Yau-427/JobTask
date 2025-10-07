@@ -21,6 +21,13 @@ export const useGroupedTransactions = () => {
       groups[key].push(t);
     });
 
-    return groups;
+    // Convert to array and sort by date descending
+    const sortedGroups = Object.keys(groups).map(date => ({
+      date,
+      transactions: groups[date],
+      sortKey: date === 'Today' ? today : date === 'Yesterday' ? yesterday : new Date(date + ', ' + today.getFullYear())
+    })).sort((a, b) => b.sortKey.getTime() - a.sortKey.getTime());
+
+    return sortedGroups;
   }, [transactions]);
 };

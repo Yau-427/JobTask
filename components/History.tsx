@@ -22,10 +22,10 @@ const History = () => {
     return (
         <ThemedView style={{ paddingHorizontal: 16, marginTop: 20 }}>
 
-            {Object.keys(groups).map((date: string) => (
+            {groups.map(({ date, transactions }) => (
                 <View key={date} style={{ marginBottom: 20 }}>
                     <ThemedText style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 10 }}>{date}</ThemedText>
-                    {groups[date].map((t: Transaction, i: number) => (
+                    {transactions.map((t: Transaction, i: number) => (
                         <View key={i} style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 4, padding: 16, backgroundColor: '#0F0F0F', borderRadius: 16 }}>
                             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                                 <View style={{ width: 40, height: 40, borderRadius: 12, backgroundColor: '#f0f0f0', justifyContent: 'center', alignItems: 'center', marginRight: 12 }}>
